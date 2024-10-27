@@ -11,8 +11,8 @@ public class DevTest {
         int intBasicInput = getInt(in, "Please enter an int for testing");
         System.out.println("You entered '" + intBasicInput + "'");
 
-        /*double doubleInput = getDouble(in, "Please enter a double for testing");
-        System.out.println("You entered '" + doubleInput + "'");*/
+        double doubleInput = getDouble(in, "Please enter a double for testing");
+        System.out.println("You entered '" + doubleInput + "'");
 
         in.close();
 
@@ -57,32 +57,25 @@ public class DevTest {
         return retInt;
     }
 
-    /*private static double getDouble(Scanner pipe, String prompt) {
+    private static double getDouble(Scanner pipe, String prompt) {
         boolean okInput = false;
         double retDouble = 0.0;
-        String buffer = ""; /*meant to test if a blank enter character was inputted, which can cause multiple
-        values to get processed all at once */
+        String buffer = ""; //Again, just decided using wrappers to parse is less headache.
 
-       /* do {//input loop until double received
+        do {
             System.out.print("\n" + prompt + ": ");
             buffer = pipe.nextLine();
-            if(buffer.isEmpty()) { //user didn't enter anything, or just spacebar and return
-                System.out.println("Nothing was entered. Please try again.");
-            }
-            else {
-                if(pipe.hasNextDouble()) {//safe to read
-                    retDouble =
-                    pipe.nextLine();
-                    okInput = true;
-                }
-                else {//invalid non-double input
-                    System.out.print("Invalid non-double input.");
-                    pipe.nextLine();
-                }
+
+            try {
+                retDouble = Double.parseDouble(buffer);
+                okInput = true;
+            } catch (NumberFormatException error) {
+                System.out.print("Invalid double parsing " + error.getMessage());
+                okInput = false;
             }
 
-        } while(!okInput); //will continue until double is received
+        } while(!okInput); //should only exit when an int is input
 
         return retDouble;
-    }*/
+    }
 }

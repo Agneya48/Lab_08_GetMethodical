@@ -39,4 +39,26 @@ public class SafeInput {
 
         return retInt;
     }
+
+    public static double getDouble(Scanner pipe, String prompt) {
+        boolean okInput = false;
+        double retDouble = 0.0;
+        String buffer = ""; //Again, just decided using wrappers to parse is less headache.
+
+        do {
+            System.out.print("\n" + prompt + ": ");
+            buffer = pipe.nextLine();
+
+            try {
+                retDouble = Double.parseDouble(buffer);
+                okInput = true;
+            } catch (NumberFormatException error) {
+                System.out.print("Invalid double parsing " + error.getMessage());
+                okInput = false;
+            }
+
+        } while(!okInput); //should only exit when an int is input
+
+        return retDouble;
+    }
 }
