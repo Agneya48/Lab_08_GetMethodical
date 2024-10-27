@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6181d48b-45a6-47fc-87bd-f50b9f4ee61f" name="Changes" comment="getNonZeroLenString done">
+    <list default="true" id="6181d48b-45a6-47fc-87bd-f50b9f4ee61f" name="Changes" comment="Method 2 done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DevTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DevTest.java" afterDir="false" />
     </list>
@@ -81,12 +81,21 @@
       <option name="project" value="LOCAL" />
       <updated>1730060734034</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Method 2 done">
+      <option name="closed" value="true" />
+      <created>1730064234460</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1730064234460</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="getNonZeroLenString done" />
-    <option name="LAST_COMMIT_MESSAGE" value="getNonZeroLenString done" />
+    <MESSAGE value="Method 2 done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Method 2 done" />
   </component>
 </project>

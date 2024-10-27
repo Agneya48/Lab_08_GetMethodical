@@ -21,16 +21,18 @@ public class SafeInput {
 
         boolean okInput = false;
         int retInt = 0;
+        String buffer = ""; /*decided to just parse int from a string, to avoid blank input like just pressing or
+        the spacebar leading to weird behavior. Spent entirely too much time learning how to do this. */
         do {
             System.out.print("\n" + prompt + ": ");
-            if(pipe.hasNextInt()) { //safe to read
-                retInt = pipe.nextInt();
-                pipe.nextLine();
+            buffer = pipe.nextLine();
+
+            try {
+                retInt = Integer.parseInt(buffer);
                 okInput = true;
-            }
-            else {//invalid non-int input
-                System.out.print("Invalid non-integer input.");
-                pipe.nextLine();
+            } catch (NumberFormatException error) {
+                System.out.print("Invalid int parsing " + error.getMessage());
+                okInput = false;
             }
 
         } while(!okInput); //should only exit when an int is input
