@@ -16,4 +16,25 @@ public class SafeInput {
 
         return retString;
     }
+
+    public static int getInt(Scanner pipe, String prompt) {
+
+        boolean okInput = false;
+        int retInt = 0;
+        do {
+            System.out.print("\n" + prompt + ": ");
+            if(pipe.hasNextInt()) { //safe to read
+                retInt = pipe.nextInt();
+                pipe.nextLine();
+                okInput = true;
+            }
+            else {//invalid non-int input
+                System.out.print("Invalid non-integer input.");
+                pipe.nextLine();
+            }
+
+        } while(!okInput); //should only exit when an int is input
+
+        return retInt;
+    }
 }
