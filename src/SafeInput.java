@@ -116,7 +116,7 @@ public class SafeInput {
         return retRangedDouble;
     }
 
-    private static boolean getYNConfirm(Scanner pipe, String prompt) {
+    public static boolean getYNConfirm(Scanner pipe, String prompt) {
         boolean retYN = false;
         boolean done = false;
         String continueInput = "";
