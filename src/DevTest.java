@@ -14,6 +14,9 @@ public class DevTest {
         double doubleInput = getDouble(in, "Please enter a double for testing");
         System.out.println("You entered '" + doubleInput + "'");
 
+        int rangedInput = getRangedInt(in, "Enter an int within range", -3, 10);
+        System.out.println("You entered '" + rangedInput + "'");
+
         in.close();
 
     }
@@ -77,5 +80,33 @@ public class DevTest {
         } while(!okInput); //should only exit when an int is input
 
         return retDouble;
+    }
+
+    private static int getRangedInt(Scanner pipe, String prompt, int low, int high) {
+        boolean okInput = false;
+        int inputInt = 0;
+        int retRangedInt = 0;
+        String buffer = ""; /*Again, well aware of how to the nextLine and hasNext methods of
+        bullet proofing, but I think this is more reliable and I didn't want to have to deal with
+        blank input causing bugs in the future. Try/catch is a good thing to learn, too*/
+
+        do{
+            System.out.print("\n" + prompt + " [" + low + ", " + high + "]: ");
+            buffer = pipe.nextLine();
+            try {
+                inputInt = Integer.parseInt(buffer);
+                if (inputInt >= low && inputInt <= high) {
+                    retRangedInt = inputInt;
+                    okInput = true;
+                }
+                else {
+                    System.out.print("Int outside valid range.");
+                }
+            } catch (NumberFormatException error) {
+                System.out.print("Invalid int parsing " + error.getMessage());
+            }
+        } while(!okInput);
+
+        return retRangedInt;
     }
 }
