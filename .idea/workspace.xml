@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6181d48b-45a6-47fc-87bd-f50b9f4ee61f" name="Changes" comment="Method 6 completed">
-      <change afterPath="$PROJECT_DIR$/src/GetUserName.java" afterDir="false" />
+    <list default="true" id="6181d48b-45a6-47fc-87bd-f50b9f4ee61f" name="Changes" comment="Program 1 Completed">
+      <change afterPath="$PROJECT_DIR$/src/FavNumbers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GetUserName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GetUserName.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +51,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.DevTest.executor": "Run",
+    "Application.FavNumbers.executor": "Run",
+    "Application.GetUserName.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
@@ -137,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730078729877</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Program 1 Completed">
+      <option name="closed" value="true" />
+      <created>1730079453178</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1730079453178</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -149,6 +160,7 @@
     <MESSAGE value="Method 4 completed" />
     <MESSAGE value="Method 5 completed" />
     <MESSAGE value="Method 6 completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Method 6 completed" />
+    <MESSAGE value="Program 1 Completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Program 1 Completed" />
   </component>
 </project>
