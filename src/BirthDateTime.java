@@ -28,6 +28,6 @@ public class BirthDateTime {
         minVal = SafeInput.getRangedInt(in, "Enter the minute of your birth:", 1, 59);
 
         System.out.println("\n Year: " + yearVal + " | Month: " + monthVal + " | Day: " + dayVal + " | " + hourVal + ":" + minVal);
-
+        in.close();
     }
 }
