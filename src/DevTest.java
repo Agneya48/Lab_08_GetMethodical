@@ -23,6 +23,10 @@ public class DevTest {
         boolean cont = getYNConfirm(in, "Continue? [Y/N]");
         System.out.println("Y/N continue returned " + cont);
 
+        String SSN = "";
+        String regExValue = getRegExString(in, "Enter your SSN", "\\d{3}-\\d{2}-\\d{4}");
+        System.out.print("You entered " + regExValue);
+
         in.close();
 
     }
@@ -163,5 +167,26 @@ public class DevTest {
         } while(!done);
 
         return retYN;
+    }
+
+    private static String getRegExString (Scanner pipe, String prompt, String regEx) {
+        //show the prompt
+        //input the data
+        //test to see if the value matches valid regex format
+        boolean okRegInput = false;
+        String value = "";
+        do {
+            System.out.print("\n" + prompt + ": ");
+            value = pipe.nextLine();
+            if(value.matches(regEx)) {
+                okRegInput = true;
+            }
+            else {
+                System.out.print("Invalid input: " + value);
+            }
+
+        }while(!okRegInput);
+
+        return value;
     }
 }

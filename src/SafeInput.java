@@ -138,4 +138,25 @@ public class SafeInput {
 
         return retYN;
     }
+
+    public static String getRegExString (Scanner pipe, String prompt, String regEx) {
+        //show the prompt
+        //input the data
+        //test to see if the value matches valid regex format
+        boolean okRegInput = false;
+        String value = "";
+        do {
+            System.out.print("\n" + prompt + ": ");
+            value = pipe.nextLine();
+            if(value.matches(regEx)) {
+                okRegInput = true;
+            }
+            else {
+                System.out.print("Invalid input: " + value);
+            }
+
+        }while(!okRegInput);
+
+        return value;
+    }
 }
