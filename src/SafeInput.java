@@ -71,7 +71,7 @@ public class SafeInput {
         blank input causing bugs in the future. Try/catch is a good thing to learn, too*/
 
         do{
-            System.out.print("\n" + prompt + " [" + low + ", " + high + "]: ");
+            System.out.print("\n" + prompt + " [" + low + " - " + high + "]: ");
             buffer = pipe.nextLine();
             try {
                 inputInt = Integer.parseInt(buffer);
@@ -97,7 +97,7 @@ public class SafeInput {
         String buffer = "";
 
         do{
-            System.out.print("\n" + prompt + " [" + low + ", " + high + "]: ");
+            System.out.print("\n" + prompt + " [" + low + " - " + high + "]: ");
             buffer = pipe.nextLine();
             try {
                 inputDouble = Double.parseDouble(buffer);
