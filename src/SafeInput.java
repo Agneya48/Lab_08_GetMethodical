@@ -62,7 +62,7 @@ public class SafeInput {
         return retDouble;
     }
 
-    private static int getRangedInt(Scanner pipe, String prompt, int low, int high) {
+    public static int getRangedInt(Scanner pipe, String prompt, int low, int high) {
         boolean okInput = false;
         int inputInt = 0;
         int retRangedInt = 0;
@@ -88,5 +88,54 @@ public class SafeInput {
         } while(!okInput);
 
         return retRangedInt;
+    }
+
+    public static double getRangedDouble(Scanner pipe, String prompt, double low, double high) {
+        boolean okInput = false;
+        double inputDouble = 0.0;
+        double retRangedDouble = 0.0;
+        String buffer = "";
+
+        do{
+            System.out.print("\n" + prompt + " [" + low + ", " + high + "]: ");
+            buffer = pipe.nextLine();
+            try {
+                inputDouble = Double.parseDouble(buffer);
+                if (inputDouble >= low && inputDouble <= high) {
+                    retRangedDouble = inputDouble;
+                    okInput = true;
+                }
+                else {
+                    System.out.print("Input double outside valid range.");
+                }
+            } catch (NumberFormatException error) {
+                System.out.print("Invalid double parsing " + error.getMessage());
+            }
+        } while(!okInput);
+
+        return retRangedDouble;
+    }
+
+    private static boolean getYNConfirm(Scanner pipe, String prompt) {
+        boolean retYN = false;
+        boolean done = false;
+        String continueInput = "";
+        do {
+            System.out.print("\n" + prompt +": ");
+            continueInput = pipe.nextLine();
+            if(continueInput.equalsIgnoreCase("Y")) {
+                retYN = true;
+                done = true;
+            }
+            else if (continueInput.equalsIgnoreCase("N")) {
+                retYN = false;
+                done = true;
+            }
+            else {
+                System.out.print("Invalid input. Please pick either 'y' or 'n'");
+            }
+        } while(!done);
+
+        return retYN;
     }
 }

@@ -17,6 +17,12 @@ public class DevTest {
         int rangedInput = getRangedInt(in, "Enter an int within range", -3, 10);
         System.out.println("You entered '" + rangedInput + "'");
 
+        double doubleRangedInput = getRangedDouble(in, "Enter a double within range", -5.5, 13.22);
+        System.out.println("you entered '" + doubleRangedInput + "'");
+
+        boolean cont = getYNConfirm(in, "Continue? [Y/N]");
+        System.out.println("Y/N continue returned " + cont);
+
         in.close();
 
     }
@@ -108,5 +114,54 @@ public class DevTest {
         } while(!okInput);
 
         return retRangedInt;
+    }
+
+    private static double getRangedDouble(Scanner pipe, String prompt, double low, double high) {
+        boolean okInput = false;
+        double inputDouble = 0.0;
+        double retRangedDouble = 0.0;
+        String buffer = "";
+
+        do{
+            System.out.print("\n" + prompt + " [" + low + ", " + high + "]: ");
+            buffer = pipe.nextLine();
+            try {
+                inputDouble = Double.parseDouble(buffer);
+                if (inputDouble >= low && inputDouble <= high) {
+                    retRangedDouble = inputDouble;
+                    okInput = true;
+                }
+                else {
+                    System.out.print("Input double outside valid range.");
+                }
+            } catch (NumberFormatException error) {
+                System.out.print("Invalid double parsing " + error.getMessage());
+            }
+        } while(!okInput);
+
+        return retRangedDouble;
+    }
+
+    private static boolean getYNConfirm(Scanner pipe, String prompt) {
+        boolean retYN = false;
+        boolean done = false;
+        String continueInput = "";
+        do {
+            System.out.print("\n" + prompt +": ");
+            continueInput = pipe.nextLine();
+            if(continueInput.equalsIgnoreCase("Y")) {
+                retYN = true;
+                done = true;
+            }
+            else if (continueInput.equalsIgnoreCase("N")) {
+                retYN = false;
+                done = true;
+            }
+            else {
+                System.out.print("Invalid input. Please pick either 'y' or 'n'");
+            }
+        } while(!done);
+
+        return retYN;
     }
 }
